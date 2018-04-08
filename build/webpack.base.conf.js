@@ -2,6 +2,10 @@
 const path = require('path')
 const config = require('../config')
 
+function resolve(dir) {
+  return path.join(__dirname, '..', dir)
+}
+
 module.exports = {
   entry: {
     app: './src/main.js'
@@ -17,10 +21,13 @@ module.exports = {
     rules: [{
       test: /\.js$/,
       loader: 'babel-loader',
-      // include: [
-      //   resolve('src'),
-      //   resolve('test')
-      // ]
+      options: {
+        presets: ['es2015']
+      },
+      include: [
+        resolve('src'),
+        resolve('test')
+      ]
     }]
   }
 }

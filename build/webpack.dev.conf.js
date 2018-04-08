@@ -20,11 +20,13 @@ const webpackDevConfig = webpackMerge(webpackBaseConfig, {
     contentBase: false
   },
   watch: true,
-  new htmlWebpackPlugin({
-    filename: 'index.html',
-    template: 'index.html',
-    inject: true
-  })
+  plugins: [
+    new htmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'index.html',
+      inject: true
+    })
+  ]
 })
 
 module.exports = webpackDevConfig

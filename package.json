@@ -1,0 +1,25 @@
+{
+  "name": "device-platform",
+  "version": "1.0.0",
+  "description": "A NPM package for getting device specific informations",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sangeethks/device-platform.git"
+  },
+  "keywords": [
+    "device-info",
+    "platform-info",
+    "fingerprint",
+    "browser-fingerprint"
+  ],
+  "author": "Sangeeth_ks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sangeethks/device-platform/issues"
+  },
+  "homepage": "https://github.com/Sangeethks/device-platform#readme"
+}

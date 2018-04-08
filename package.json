@@ -25,6 +25,9 @@
   },
   "homepage": "https://github.com/Sangeethks/device-platform#readme",
   "devDependencies": {
-    "webpack-dev-server": "^3.1.3"
+    "copy-webpack-plugin": "^4.5.1",
+    "webpack": "^4.5.0",
+    "webpack-dev-server": "^3.1.3",
+    "webpack-merge": "^4.1.2"
   }
 }

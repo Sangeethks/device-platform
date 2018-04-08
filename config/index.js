@@ -1,12 +1,17 @@
 'use strict'
+const path = require('path')
 
-let config = {
+var config = {
   dev: {
-
+    host: 'localhost',
+    port: 3004,
+    devtool: 'cheap-module-eval-source-map'
   },
   prod: {
-    
+    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsPublicPath: '/',
+    devtool: '#source-map'
   }
 }
 
-export default config;
+module.exports = config;

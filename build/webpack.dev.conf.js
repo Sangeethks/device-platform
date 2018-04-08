@@ -5,6 +5,7 @@ const config = require('../config')
 const webpack = require('webpack')
 const webpackMerge = require('webpack-merge')
 const copyWebpackPlugin = require('copy-webpack-plugin')
+const htmlWebpackPlugin = require('html-webpack-plugin')
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -15,9 +16,15 @@ const webpackDevConfig = webpackMerge(webpackBaseConfig, {
     clientLogLevel: 'warning',
     contentBase: path.join(__dirname, '../dist/'),
     port: PORT || config.dev.port,
-    host: HOST || config.dev.host
+    host: HOST || config.dev.host,
+    contentBase: false
   },
-  watch: true
+  watch: true,
+  new htmlWebpackPlugin({
+    filename: 'index.html',
+    template: 'index.html',
+    inject: true
+  })
 })
 
 module.exports = webpackDevConfig

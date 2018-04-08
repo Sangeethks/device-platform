@@ -6,6 +6,7 @@ const webpack = require('webpack')
 const webpackMerge = require('webpack-merge')
 const copyWebpackPlugin = require('copy-webpack-plugin')
 const htmlWebpackPlugin = require('html-webpack-plugin')
+const friendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -25,6 +26,13 @@ const webpackDevConfig = webpackMerge(webpackBaseConfig, {
       filename: 'index.html',
       template: 'index.html',
       inject: true
+    }),
+    new friendlyErrorsPlugin({
+      compilationSuccessInfo: {
+        messages: [
+          'Application is running at : http://'
+        ]
+      }
     })
   ]
 })

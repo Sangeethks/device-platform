@@ -4,7 +4,17 @@ const config = require('../config')
 const webpackBaseConfig = require('./webpack.base.conf.js')
 const copyWebpackPlugin = require('copy-webpack-plugin')
 const uglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const cleanWebpackPlugin = require('clean-webpack-plugin')
 const merge = require('webpack-merge')
+
+// Settings for clean webpack plugin
+var pathsToClean = [
+  'dist'
+]
+var cleanOptions = {
+  root: path.resolve(__dirname, '../'),
+  verbose: true
+}
 
 const webpackProdConfig = merge(webpackBaseConfig, {
   mode: 'production',
@@ -26,7 +36,8 @@ const webpackProdConfig = merge(webpackBaseConfig, {
     new copyWebpackPlugin([{
       from: path.resolve(__dirname, '../package.json'),
       to: config.prod.assetsRoot
-    }])
+    }]),
+    new cleanWebpackPlugin(pathsToClean, cleanOptions)
   ]
 })
 

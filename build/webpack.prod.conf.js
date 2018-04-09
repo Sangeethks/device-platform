@@ -22,7 +22,11 @@ const webpackProdConfig = merge(webpackBaseConfig, {
       },
       sourceMap: true,
       parallel: true
-    })
+    }),
+    new copyWebpackPlugin([{
+      from: path.resolve(__dirname, '../package.json'),
+      to: config.prod.assetsRoot
+    }])
   ]
 })
 

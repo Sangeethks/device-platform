@@ -12,13 +12,15 @@ const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
 const webpackDevConfig = webpackMerge(webpackBaseConfig, {
+  mode: 'development',
   devtool: config.dev.devtool,
   devServer: {
     clientLogLevel: 'warning',
     contentBase: path.join(__dirname, '../dist/'),
     port: PORT || config.dev.port,
     host: HOST || config.dev.host,
-    contentBase: false
+    contentBase: false,
+    quiet: true
   },
   watch: true,
   plugins: [
@@ -30,7 +32,7 @@ const webpackDevConfig = webpackMerge(webpackBaseConfig, {
     new friendlyErrorsPlugin({
       compilationSuccessInfo: {
         messages: [
-          'Application is running at : http://'
+          'Application is running at : http://' + config.dev.host + ':' + config.dev.port
         ]
       }
     })

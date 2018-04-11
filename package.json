@@ -1,13 +1,14 @@
 {
   "name": "device-platform",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A NPM package for getting device specific informations",
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack-dev-server --config build/webpack.dev.conf.js",
     "test": "npm run unit",
-    "build": "webpack --config build/webpack.prod.conf.js"
+    "build": "webpack --config build/webpack.prod.conf.js",
+    "publish": "npm publish --folder dist"
   },
   "repository": {
     "type": "git",

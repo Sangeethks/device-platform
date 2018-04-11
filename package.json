@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --config build/webpack.dev.conf.js",
     "test": "npm run unit",
     "build": "webpack --config build/webpack.prod.conf.js",
-    "publish": "npm publish --folder dist"
+    "deploy": "npm publish --folder dist"
   },
   "repository": {
     "type": "git",

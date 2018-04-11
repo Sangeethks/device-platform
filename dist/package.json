@@ -1,6 +1,6 @@
 {
   "name": "device-platform",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A NPM package for getting device specific informations",
   "main": "index.js",
   "scripts": {

@@ -2,7 +2,7 @@
   "name": "device-platform",
   "version": "1.0.3",
   "description": "A NPM package for getting device specific informations",
-  "main": "index.js",
+  "main": "device-platform.js",
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack-dev-server --config build/webpack.dev.conf.js",

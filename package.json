@@ -21,7 +21,7 @@
     "browser-fingerprint"
   ],
   "author": "Sangeeth_ks",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Sangeethks/device-platform/issues"
   },

@@ -22,7 +22,11 @@ module.exports = function(config) {
             presets: ['es2015']
           }
         }]
-      }
+      },
+    },
+    webpackMiddleware: {
+      stats: 'errors-only',
+      noInfo: true
     },
     reporters: ['spec'],
     port: 9876,

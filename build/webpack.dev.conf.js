@@ -27,11 +27,14 @@ const webpackDevConfig = webpackMerge(webpackBaseConfig, {
     new htmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
-      inject: true
+      inject: true,
+      chunks: ['app']
     }),
     new htmlWebpackPlugin({
       filename: 'test.html',
       template: 'test/test.html',
+      inject: true,
+      chunks: ['test']
     }),
     new friendlyErrorsPlugin({
       compilationSuccessInfo: {

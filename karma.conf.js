@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack')
+
 module.exports = function(config) {
   config.set({
     basePath: '',
@@ -8,7 +10,19 @@ module.exports = function(config) {
       'test/**/*.test.js'
     ],
     preprocessors: {
-      // './app/**/*.js': 'coverage'
+      'test/**/*.test.js': ['webpack']
+    },
+    webpack: {
+      mode: 'development',
+      module: {
+        rules: [{
+          test: /\.js$/,
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015']
+          }
+        }]
+      }
     },
     reporters: ['spec'],
     port: 9876,

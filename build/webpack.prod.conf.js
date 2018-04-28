@@ -1,6 +1,7 @@
 'use strict'
 const path = require('path')
 const config = require('../config')
+const webpack = require('webpack')
 const webpackBaseConfig = require('./webpack.base.conf.js')
 const copyWebpackPlugin = require('copy-webpack-plugin')
 const uglifyJsPlugin = require('uglifyjs-webpack-plugin')
@@ -21,7 +22,7 @@ const webpackProdConfig = merge(webpackBaseConfig, {
   devtool: config.prod.devtool,
   output: {
     path: config.prod.assetsRoot,
-    filename: 'device-platform.js'
+    filename: '[name].js'
   },
   plugins: [
     new uglifyJsPlugin({
@@ -38,7 +39,17 @@ const webpackProdConfig = merge(webpackBaseConfig, {
       to: config.prod.assetsRoot
     }]),
     new cleanWebpackPlugin(pathsToClean, cleanOptions)
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        test: {
+          chunks: "all",
+          name: "app.test.js"
+        }
+      }
+    }
+  }
 })
 
 module.exports = webpackProdConfig

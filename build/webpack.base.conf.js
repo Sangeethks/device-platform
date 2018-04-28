@@ -9,6 +9,7 @@ function resolve(dir) {
 module.exports = {
   entry: {
     app: './src/main.js',
+    test: './test/test.js'
   },
   output: {
     path: config.prod.assetsRoot,
@@ -25,7 +26,9 @@ module.exports = {
         presets: ['es2015']
       },
       include: [
-        resolve('src'),
+        resolve('src')
+      ],
+      exclude: [
         resolve('test')
       ]
     }]

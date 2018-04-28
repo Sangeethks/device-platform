@@ -16,7 +16,7 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: [ '.js', '.json' ]
+    extensions: [ '.js', '.css', '.json' ]
   },
   module: {
     rules: [{
@@ -26,11 +26,12 @@ module.exports = {
         presets: ['es2015']
       },
       include: [
-        resolve('src')
-      ],
-      exclude: [
+        resolve('src'),
         resolve('test')
       ]
+    }, {
+      test: /\.css$/,
+      loader: ['style-loader', 'css-loader']
     }]
   }
 }

@@ -1,1 +1,1 @@
-console.log('hello');
+import 'mocha/mocha.css';

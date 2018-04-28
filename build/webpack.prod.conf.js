@@ -39,17 +39,7 @@ const webpackProdConfig = merge(webpackBaseConfig, {
       to: config.prod.assetsRoot
     }]),
     new cleanWebpackPlugin(pathsToClean, cleanOptions)
-  ],
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        test: {
-          chunks: "all",
-          name: "app.test.js"
-        }
-      }
-    }
-  }
+  ]
 })
 
 module.exports = webpackProdConfig

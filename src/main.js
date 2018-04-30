@@ -1,20 +1,20 @@
-import browserInfo from './modules/browser';
+import browserInfo from './modules/browser'
+let browser = browserInfo.getBrowserInfo()
 
 class DevicePlatform {
   constructor() {
-    this.browser = browserInfo.getBrowserInfo();
   }
 
   get browserName () {
-    return this.browser.browserName;
+    return browser.browserName;
   }
 
   get browserVersion () {
-    return this.browser.browserVersion;
+    return browser.browserVersion;
   }
 
   get browserMajorVersion () {
-    return this.browser.browserMajorVersion;
+    return browser.browserMajorVersion;
   }
 
   get cookiesEnabled () {

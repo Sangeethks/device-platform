@@ -22,7 +22,9 @@ const webpackProdConfig = merge(webpackBaseConfig, {
   devtool: config.prod.devtool,
   output: {
     path: config.prod.assetsRoot,
-    filename: 'index.js'
+    filename: 'index.js',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   plugins: [
     new uglifyJsPlugin({

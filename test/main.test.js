@@ -1,4 +1,4 @@
-import DevicePlatform from '../src/main'
+import DevicePlatform from '../dist'
 
 let Device = new DevicePlatform()
 

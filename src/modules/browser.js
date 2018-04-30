@@ -76,7 +76,7 @@ let browser = {
     return { browserName, browserVersion, browserMajorVersion };
   },
   // Checks whether cookies are enabled or not
-  isCookiesEnabled () {
+  isCookieEnabled () {
     let cookieEnabled = (navigator.cookieEnabled) ? true : false;
 
     if (typeof navigator.cookieEnabled == 'undefined' && !cookieEnabled) {

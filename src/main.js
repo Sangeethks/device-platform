@@ -11,15 +11,17 @@ class DevicePlatform {
     this.browserVersion = browserVersion
     this.browserMajorVersion = browserMajorVersion
     this.cookieEnabled = this.isCookieEnabled()
-    this.flashSupport = this.hasFlash()
+    this.hasFlash = this.hasFlashSupport()
   }
 
   isCookieEnabled () {
-    return browserInfo.isCookieEnabled()
+    let cookieEnabled = browserInfo.isCookieEnabled()
+    return cookieEnabled ? cookieEnabled : null
   }
 
-  hasFlash () {
-    return browserInfo.hasFlash()
+  hasFlashSupport () {
+    let hasFlash = browserInfo.hasFlashSupport()
+    return hasFlash ? hasFlash : null
   }
 }
 
